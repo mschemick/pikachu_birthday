@@ -1,0 +1,289 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #101927;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: arial, sans-serif;
+}
+
+.birthday-container {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+.pikachu-container {
+    width: min(90vw, 500px);
+    margin: auto;
+}
+
+.pikachu-container svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* tail wagging */
+
+#tail {
+    transform-box: fill-box;
+    transform-origin: 10% 85%;
+    animation: tailwag 1.5s ease-in-out infinite;
+}
+
+@keyframes tailwag {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+}
+
+/* ears wiggle */
+
+/*left ear wiggle*/
+#left-ear {
+    transform-box: fill-box;
+    transform-origin: bottom center;
+    animation: leftEarWiggle 2s ease-in-out infinite;
+}
+
+/*right ear wiggle*/
+#right-ear {
+    transform-box: fill-box;
+    transform-origin: bottom center;
+    animation: rightEarWiggle 2s ease-in-out infinite;
+}
+
+@keyframes leftEarWiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-7deg);
+    }
+}
+
+@keyframes rightEarWiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(7deg);
+    }
+}
+
+/* eye animattion */
+
+#left-eye,
+#right-eye {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: pikachuBlink 4.5s ease-in-out infinite;
+}
+
+@keyframes pikachuBlink {
+  0%, 89%, 94%, 100% {
+    scale: 1 1;
+  }
+
+  91.5% {
+    scale: 1 0.05;
+  }
+}
+
+/* candles */
+
+#path28,
+#path29,
+#path30 {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+}
+
+/* left frame */
+#path28 {
+    animation: flameFlicker1 0.9s ease-in-out infinite;
+}
+
+/* middle flame */
+
+#path29 {
+    animation: flameFlicker2 1.1s ease-in-out infinite;
+}
+
+/* right flame */
+
+#path30 {
+    animation: flameFlicker3 0.8s ease-in-out infinite;
+}
+
+@keyframes flameFlicker1 {
+  0%, 100% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  25% {
+    scale: 0.95 1.08;
+    opacity: 0.9;
+  }
+  50% {
+    scale: 1.05 0.92;
+    opacity: 1;
+  }
+  75% {
+    scale: 0.98 1.04;
+    opacity: 0.95;
+  }
+}
+
+@keyframes flameFlicker2 {
+  0%, 100% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  30% {
+    scale: 1.08 0.9;
+    opacity: 0.92;
+  }
+  60% {
+    scale: 0.94 1.1;
+    opacity: 1;
+  }
+  80% {
+    scale: 1.02 0.96;
+    opacity: 0.9;
+  }
+}
+
+@keyframes flameFlicker3 {
+  0%, 100% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  20% {
+    scale: 0.96 1.06;
+    opacity: 0.88;
+  }
+  45% {
+    scale: 1.06 0.93;
+    opacity: 1;
+  }
+  70% {
+    scale: 0.97 1.02;
+    opacity: 0.93;
+  }
+}
+
+/* candle glow */
+
+#path28,
+#path29,
+#path30 {
+    filter: drop-shadow(0 0 3px #ffcc55)
+    drop-shadow(0 0 6px #ff9f38);
+}
+
+#candle-flames {
+    animation: candleGlow 2s ease-in-out infinite;
+}
+
+@keyframes candleGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.2s)
+    }
+}
+
+/* arm animation */
+
+#left-arm,
+#right-arm {
+    transform-box: fill-box;
+    transform-origin: top center;
+}
+
+/* left arm */
+#left-arm {
+    animation: leftArmMove 2.5s ease-in-out infinite;
+}
+
+/* right arm */
+#right-arm {
+    animation: rightArmMove 2.5s ease-in-out infinite;
+}
+
+@keyframes leftArmMove {
+    0%, 100% {
+        rotate: 0deg;
+        translate: 0 0;
+    }
+
+    50% {
+        rotate: -3deg;
+        translate: -1px -2px;
+    }
+}
+
+@keyframes rightArmMove {
+    0%, 100% {
+        rotate: 0deg;
+        translate: 0 0;
+    }
+
+    50% {
+        rotate: -3deg;
+        translate: -1px -2px;
+    }
+}
+
+/* cake movement */
+
+#cake {
+    animation: cakeBob 2.5s ease-in-out infinite;
+}
+
+@keyframes cakeBob {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -2px;
+    }
+}
+
+/* Birthday cake lettering */
+
+#text24 {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    fill: #49332D;
+    stroke: #fff5ed;
+    stroke-width: 1.2px;
+    paint-order: stroke fill;
+    text-anchor: middle;
+}
+
+#text25 {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    fill: #49332D;
+    stroke: #fff5ed;
+    stroke-width: 1.5px;
+    paint-order: stroke fill;
+    text-anchor: middle;
+}
